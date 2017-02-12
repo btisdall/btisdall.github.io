@@ -12,7 +12,12 @@ In a typical CFMS deployment the client executes autonomously, bringing the syst
 
 So our first effort was quite literally:
 
-    bentis@tork:~$ for i in 10.1.1.{1..20}; do echo "Deploying to $i"; ssh $i sudo puppetd --test; done
+```bash
+for i in 10.1.1.{1..20}; do
+  echo "Deploying to $i"
+  ssh $i sudo puppetd --test
+done
+```
 
 This works fine, but is error-prone (somewhat negating the point of a config mgmt system!) and *serial* (slow!). We could start packaging this up in a script and doing something to parallelise it but wouldn't it be nice if someone had solved the problem already? Enter [Capistrano]("https://github.com/capistrano/capistrano/wiki/Documentation-v2.x"):
 
