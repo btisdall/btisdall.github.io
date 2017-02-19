@@ -1,7 +1,7 @@
 ---
 title: Handy tools for debugging DHCP on Linux
 date: 2012-01-06 09:58:42
-categories: Linux, DHCP, DevOps, networking
+tags: [ Linux, DHCP, DevOps, networking ]
 ---
 
 Sometimes it's very useful to able to test that your DHCP server is going to do the right thing with a given client without actually going as far as trying to acquire an address. For example you might be remotely connected to a server and not want to risk being shut out if the dchp client fails to acquire the expected, or any address. On Linux (and I daresay many other \*nix) two tools are very useful here, `dhcping` and `dhcpdump`.

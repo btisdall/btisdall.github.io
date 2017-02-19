@@ -1,7 +1,7 @@
 ---
 title: I've run out of reasons not to blog more frequently
 date: 2012-01-04 09:21:07
-categories: Perl, blogging, Markdown
+tags: [ Perl, blogging, Markdown ]
 ---
 
 I spent most of last year not blogging even though there were occasions where I thought I had something useful to say. The reason? 

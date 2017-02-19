@@ -1,7 +1,7 @@
 ---
 title: Pulling Puppet's strings with Capistrano
 date: 2012-01-27 14:17:51
-categories: Capistrano, Puppet, Ruby, DevOps, deployment
+tags: [ Capistrano, Puppet, Ruby, DevOps, deployment ]
 ---
 
 Last year we took our first serious step into the world of system automation at work when we [Puppetised]("http://puppetlabs.com/") our web infrastructure. Puppet is awesome, but we soon realised:

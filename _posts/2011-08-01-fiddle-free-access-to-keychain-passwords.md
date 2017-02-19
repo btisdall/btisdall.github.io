@@ -1,7 +1,7 @@
 ---
 title: Fiddle-free access to OSX keychain passwords
 date: 2011-08-01
-categories: OSX, Alfred, Perl, productivity
+tags: [ OSX, Alfred, Perl, productivity ]
 ---
 
 As someone that prefers keyboard over mouse using Mac OSX's keychain to store ad-hoc usernames/passwords was always too much bother for me, but having started to use the nifty [Alfred](http://www.alfredapp.com/) recently I've been looking at ways of automating my everyday workflows.
