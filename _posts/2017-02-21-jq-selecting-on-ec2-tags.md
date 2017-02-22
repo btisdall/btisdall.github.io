@@ -6,9 +6,9 @@ tags:
   - AWS
 ---
 
-In the last [jq article](../custom-jq-functions) I referred to the common operation of collapsing the `Reservations` and `Instances` arrays in the JSON returned by a `aws ec2 describe-instances` to produce a stream of instance objects.
+In the [last jq article](../custom-jq-functions) I referred to the common operation of collapsing the `Reservations` and `Instances` arrays in the JSON returned by a `aws ec2 describe-instances` call to produce a stream of instance objects.
 
-Given a stream of instance objects another extremely common operation is to filter it based on the key and value of one or more tags (note, it is possible to pre-filter the list using the `aws` command's `--filter tag:Key=foo,Values=bar` syntax but this is an unsatisfactory workflow as it requires re-fetching the data each time the filter is changed).
+Given a stream of instance objects another extremely common operation is to filter it based on the key and value of one or more tags (note, it is possible to pre-filter the list using the `aws` command's `--filter tag:Key=foo,Values=bar` syntax but this is unsatisfactory as it requires re-fetching the data each time the filter is changed).
 
 # Getting started
 
@@ -42,7 +42,8 @@ $ cat tags.json | jq '.Tags|contains([{"Key":"Role","Value":"WebServer"}])'
 false
 ```
 
-This is pretty nice but data structures of the form `[{"Key:" "foo", "Value": "bar"}]` while ideal for data processing are not a natural way for humans to express information (very rarely do I find myself saying 'Hello my key "Name" has value "Ben"'), plus it's hard work to type. Enter another jq filter `from_entries` (and its counterpart `to_entries`).
+This is pretty nice but data structures of the form ```[{"Key:" "foo", "Value": "bar"}]``` while ideal for data processing are not a natural way for humans to express information (very rarely do I find myself saying _'Hello my key "Name" has value "Ben"'_), plus it's hard work to type. Enter another jq filter `from_entries` (and its counterpart `to_entries`).
+
 
 ```
 $ cat tags.json | jq '.Tags|from_entries' -cM
@@ -64,11 +65,11 @@ true
 ```
 
 
-Once we have a matching mechanism we can then use `select()` to obtain the matching objects from our stream.
+Once we have a matching mechanism we can then use `select` to obtain the matching objects from our stream.
 
 # Putting it all together
 
-We can make use the function we created in the [last jq article](../custom-jq-functions) to produce a stream of EC2 instance objects:
+We can make use of the function we created in the [last jq article](../custom-jq-functions) to produce a stream of EC2 instance objects:
 
 ```
 aws ec2 describe-instances | jq 'ec2i|select(.Tags//[]|from_entries|contains({"Role": "ApiServer","Environment":"production"}))|.InstanceId
