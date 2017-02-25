@@ -1,0 +1,16 @@
+{% assign background_image = page.header.background_image | default: 'https://dl.dropboxusercontent.com/u/45526256/web-assets/metall.jpg' %}
+
+<div
+  class="wrapper-masthead;"
+  style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('{{ background_image }}');
+  background-color:{{ page.header.background_color }};
+  border-radius: 5px;
+  background-position: center bottom;
+  background-size: 800px;
+  min-height: 100px;"
+><h1 style="font-size: 30px; padding: 5px; letter-spacing: 1px; text-align: center; color: {{ page.header.text_color | default: 'white' }};margin: 0px 0px 0px;">{{ page.title }}</h1>
+</div>
