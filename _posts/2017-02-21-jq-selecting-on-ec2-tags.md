@@ -8,7 +8,7 @@ tags:
 
 In the [last jq article](../custom-jq-functions) I referred to the common operation of collapsing the `Reservations` and `Instances` arrays in the JSON returned by a `aws ec2 describe-instances` call to produce a stream of instance objects.
 
-Given a stream of instance objects another extremely common operation is to filter it based on the key and value of one or more tags (note, it is possible to pre-filter the list using the `aws` command's `--filter tag:Key=foo,Values=bar` syntax but this is unsatisfactory as it requires re-fetching the data each time the filter is changed).
+Given a stream of instance objects another extremely common operation is to filter it based on the key and value of one or more tags (note, it is possible to pre-filter the list using the `aws` command's `--filter Name=tag:foo,Values=bar` syntax but this can be unsatisfactory as it requires re-fetching the data each time the filter is changed).
 
 # Getting started
 
@@ -42,7 +42,7 @@ $ cat tags.json | jq '.Tags|contains([{"Key":"Role","Value":"WebServer"}])'
 false
 ```
 
-This is pretty nice but data structures of the form ```[{"Key:" "foo", "Value": "bar"}]``` while ideal for data processing are not a natural way for humans to express information (very rarely do I find myself saying _'Hello my key "Name" has value "Ben"'_), plus it's hard work to type. Enter another jq filter `from_entries` (and its counterpart `to_entries`).
+This is pretty nice but data structures of the form ```[{"key":"foo","value":"bar"}]``` while ideal for data processing are not a natural way for humans to express information (very rarely do I find myself saying _'Hello my key "Name" has value "Ben"'_), plus it's hard work to type. Enter another jq filter `from_entries` (and its counterpart `to_entries`).
 
 
 ```
