@@ -4,6 +4,7 @@ IMAGE := jk
 
 run: image
 	docker run \
+--rm \
 -p 4000:4000 \
 -v ${PWD}:/home/ruby/src \
 -w /home/ruby -ti \
