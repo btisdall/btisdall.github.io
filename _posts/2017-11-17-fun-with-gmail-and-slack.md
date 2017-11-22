@@ -7,11 +7,11 @@ tags:
   - Slack
 ---
 
-This is brief article describing a productivity tip (for you young folk out there a "life hack") that lets you use Slack to notify you about emails of particular interest.
+This is a brief article describing a productivity tip (for you young folk out there a "life hack") that lets you use Slack to notify you about emails of particular interest.
 
 # One notification system to rule them all
 
-Well, fewer anyway. Like many people I far prefer IM over email and I'm fortunate enough to work in a place where if someone needs to have a conversation with me they'll almost certainly use IM or come over to my desk. Perhaps as a consequence of this is that I've become less good at paying attention to email, which can sometimes cause problems (of course email clients can notify you about incoming mail, but it's often not that configurable and I would prefer to have as few systems for telling me about stuff as possible).
+Well, fewer anyway. Like many people I far prefer IM over email and I'm fortunate enough to work in a place where if someone needs to have a conversation with me they'll almost certainly use IM or come over to my desk. Perhaps as a consequence of this I've become less good at paying attention to email, which can sometimes cause problems (of course email clients can notify you about incoming mail, but it's often not that configurable and I would prefer to have as few systems for telling me about stuff as possible).
 
 # Slack email addresses
 
@@ -19,7 +19,7 @@ If you're a member of Slack team just head over to `Preferences -> Messages & Me
 
 # Gmail forwarding addresses
 
-Setting up a forwarding address is pretty easy, if you want a walk-through try this [Google help article](https://support.google.com/mail/answer/10957?hl=en). Once you've completed the process Gmail will send a verification email to the address and Slackbot should tell you it's received it - expand the message, click on the confirmation link and congratulations, you're done preparing.
+Setting up a forwarding address is pretty easy, if you want a walk-through try this [Google help article](https://support.google.com/mail/answer/10957?hl=en) (expand the `Turn automatic forwarding on or off` section, follow the instructions but stop at step 8). Once you've completed the process Gmail will send a verification email to the address and Slackbot should tell you it's received it - expand the message, click on the confirmation link and congratulations, you're done preparing.
 
 # Doing something useful
 
